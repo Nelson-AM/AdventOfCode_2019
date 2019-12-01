@@ -11,7 +11,6 @@ def load_file_as_list(filename, to_int=None):
 
 
 def calculate_total_fuel_requirements(total_mass):
-    print("total_mass is of type", type(total_mass))
     total_fuel = 0
     for i in total_mass:
         total_fuel += calculate_fuel_requirement_for_module(i)
