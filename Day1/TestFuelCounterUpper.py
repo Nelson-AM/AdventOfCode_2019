@@ -1,6 +1,6 @@
 import unittest
 
-from FuelCounterUpper import calculate_fuel_given_mass, \
+from Day1.FuelCounterUpper import calculate_fuel_given_mass, \
     load_file_as_list, calculate_total_fuel_requirements_modules_only, \
     calculate_total_fuel_for_module, calculate_total_fuel_requirements
 

@@ -1,6 +1,6 @@
 import unittest
 
-from IntCode import manipulate_values, run_opcodes
+from Day2.IntCode import manipulate_values, run_opcodes
 
 
 class MyTestCase(unittest.TestCase):
