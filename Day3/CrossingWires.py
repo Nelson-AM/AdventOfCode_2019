@@ -1,3 +1,5 @@
+from tqdm import tqdm
+
 from Day1.FuelCounterUpper import load_file_as_list
 
 
@@ -10,7 +12,7 @@ def find_full_path_of_wire(wire_instructions):
 
     full_path = [[0, 0]]
 
-    for instruction in wire_path_list:
+    for instruction in tqdm(wire_path_list):
         for i in range(int(instruction[1:])):
             full_path = update_path(full_path, instruction[0])
     return full_path[1:]
@@ -33,11 +35,13 @@ def update_path(full_path, direction):
 
 
 def find_intersections(path_one, path_two):
-    return [value for value in path_one if value in path_two]
+    path_one_set = set(tuple(x) for x in path_one)
+    path_two_set = set(tuple(x) for x in path_two)
+    return path_one_set & path_two_set
 
 
 def calculate_manhattan_distances(intersections):
-    return [abs(value[0]) + abs(value[1]) for value in intersections]
+    return [abs(value[0]) + abs(value[1]) for value in tqdm(intersections)]
 
 
 def find_closest_intersection(wire_one, wire_two):
@@ -45,7 +49,6 @@ def find_closest_intersection(wire_one, wire_two):
     path_two = find_full_path_of_wire(wire_two)
 
     intersections = find_intersections(path_one, path_two)
-    # print(intersections)
     manhattan_distances = calculate_manhattan_distances(intersections)
     return min(manhattan_distances)
 
