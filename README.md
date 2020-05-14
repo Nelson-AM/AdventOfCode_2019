@@ -12,3 +12,4 @@ My solutions for the Advent of Code 2019 puzzles.
 * Finding solutions while writing robust code is my main priority.
 * TDD: test first, code second.
 * Optimize when I am bored or I get fed up when my code is being slow.
+* Separate branch for each unfinished day, merge to master when I have both stars for a day.
