@@ -1,4 +1,3 @@
-
 def find_unique_digits(number):
     return set(str(number))
 
@@ -15,12 +14,17 @@ def does_number_have_decreasing_digits(number_to_test):
     return True
 
 
-def does_number_have_double_same_digits(number_to_test):
-    str_number = str(number_to_test)
-    for a, b in zip(str_number[:-1], str_number[1:]):
-        if a == b:
-            return True
+def does_number_have_double_same_digits(number):
+    unique_digits = find_unique_digits(number)
+    digit_counts = []
+    for i in unique_digits:
+        digit_counts.append(count_digits_in_number(i, number))
+    if 2 in digit_counts:
+        return True
     return False
+    # return True if 2 in digit_counts else False
+    # print(digit_counts)
+    # return True
 
 
 def generate_possible_passwords(min_val, max_val):
